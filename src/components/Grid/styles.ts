@@ -5,6 +5,7 @@ export const Table = styled.table`
   margin: 0 3rem;
   border: 1px solid ${(props) => props.theme.colors.primary};
   border-collapse: collapse;
+  margin-top: 2rem;
 
   th {
     font-size: 1.6rem;

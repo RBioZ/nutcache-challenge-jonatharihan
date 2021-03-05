@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-
     font-size: 60%;
   }
 
@@ -34,10 +33,6 @@ const GlobalStyle = createGlobalStyle`
     color: var(--color-text-base);
   }
 
-  .container {
-    width: 90vw;
-    max-width: 700px;
-  }
 
   @media (min-width: 700px) {
     :root {

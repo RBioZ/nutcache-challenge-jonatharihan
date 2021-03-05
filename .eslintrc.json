@@ -25,6 +25,8 @@
     "prettier"
   ],
   "rules": {
+    "no-alert":"off",
+    "camelcase":"off",
     "jsx-a11y/label-has-for":"off",
     "react/prop-types": "off",
     "prettier/prettier": "error",

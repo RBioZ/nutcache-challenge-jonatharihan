@@ -66,6 +66,7 @@ export const Container = styled.div`
       height: 4rem;
       margin-top: 4rem;
       border: none;
+      border-radius: 0.3rem;
 
       :hover {
         cursor: pointer;

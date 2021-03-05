@@ -14,6 +14,6 @@ export default {
     bg_light: '#f8f9fa',
 
     background: '#fff',
-    text: '#333',
+    text: '#333f48',
   },
 };
