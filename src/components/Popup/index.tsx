@@ -2,8 +2,6 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-const Popup: React.FC = () => {
-  return <div />;
-}
+const Popup: React.FC = () => <div />;
 
 export default Popup;
