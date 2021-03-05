@@ -9,6 +9,7 @@ const Header: React.FC = () => {
   return (
     <S.Container>
       <S.Logo src={NutLogo} alt="logo" width="220" height="56" />
+      <S.Button>Criar</S.Button>
     </S.Container>
   );
 };
