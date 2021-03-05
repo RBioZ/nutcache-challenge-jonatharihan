@@ -2,13 +2,13 @@ import React from 'react';
 
 import * as S from './styles';
 
-import { useCreateModal } from '../../contexts/AppContext';
+import { useAppHook } from '../../contexts/AppContext';
 
 // Image
 import NutLogo from '../../assets/images/nutcache-logo.png';
 
 const Header: React.FC = () => {
-  const { toggleCreateModal } = useCreateModal();
+  const { toggleCreateModal } = useAppHook();
 
   return (
     <S.Container>

@@ -1,22 +1,25 @@
-import React from 'react';
+/* eslint-disable camelcase */
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { useCreateModal } from '../../contexts/AppContext';
+import { ThemeContext } from 'styled-components';
+import { useAppHook } from '../../contexts/AppContext';
 import api from '../../services/api';
 import * as S from './styles';
 
 interface IData {
-  birthDate: string;
+  birth_date: string;
   cpf: string;
   email: string;
   gender: string;
   name: string;
-  startDate: string;
+  start_date: string;
   team: string;
 }
 
 const Popup: React.FC = () => {
   const { register, handleSubmit } = useForm();
-  const { toggleCreateModal } = useCreateModal();
+  const { toggleCreateModal } = useAppHook();
+  const { colors } = useContext(ThemeContext);
 
   const submitRegister = async (data: IData) => {
     try {
@@ -37,7 +40,12 @@ const Popup: React.FC = () => {
         <form onSubmit={handleSubmit(submitRegister)}>
           <h3>Cadastro de Funcionário</h3>
 
-          <input ref={register} name="name" placeholder="Nome Completo" />
+          <input
+            onClick={() => toggleCreateModal(false)}
+            ref={register}
+            name="name"
+            placeholder="Nome Completo"
+          />
           <input ref={register} name="email" placeholder="E-mail" />
           <input ref={register} name="cpf" placeholder="CPF" />
 
@@ -84,7 +92,16 @@ const Popup: React.FC = () => {
             </div>
           </div>
 
-          <button type="submit">Cadastrar</button>
+          <div className="wrapper">
+            <button
+              onClick={() => toggleCreateModal(false)}
+              style={{ backgroundColor: colors.bg_danger }}
+              type="button"
+            >
+              Cancelar
+            </button>
+            <button type="submit">Cadastrar</button>
+          </div>
         </form>
       </S.Container>
     </S.Background>

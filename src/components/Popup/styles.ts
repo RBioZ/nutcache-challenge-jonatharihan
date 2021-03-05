@@ -16,6 +16,19 @@ export const Container = styled.div`
   background-color: #fff;
   border-radius: 5px;
 
+  #close {
+    position: absolute;
+    z-index: 5;
+    height: 5rem;
+    width: 5rem;
+
+    right: 2rem;
+    top: 2rem;
+    :hover {
+      cursor: pointer;
+    }
+  }
+
   @media screen and (max-width: 800px) {
     width: 80%;
   }
@@ -67,6 +80,7 @@ export const Container = styled.div`
       margin-top: 4rem;
       border: none;
       border-radius: 0.3rem;
+      width: 48%;
 
       :hover {
         cursor: pointer;

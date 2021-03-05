@@ -1,9 +1,23 @@
+/* eslint-disable camelcase */
 import React, { useContext } from 'react';
 import { FiEdit, FiTrash } from 'react-icons/fi';
 import { ThemeContext } from 'styled-components';
 import * as S from './styles';
 
-const Row: React.FC = () => {
+interface IRow {
+  data: {
+    _id: string;
+    name: string;
+    birth_date: string;
+    gender: string;
+    email: string;
+    cpf: string;
+    start_date: string;
+    team: string;
+  };
+}
+
+const Row: React.FC<IRow> = ({ data }) => {
   const { colors } = useContext(ThemeContext);
 
   return (
