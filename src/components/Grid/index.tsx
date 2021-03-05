@@ -15,6 +15,25 @@ const Grid: React.FC = () => {
       </tr>
       <Row />
       <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
     </S.Table>
   );
 };

@@ -7,7 +7,7 @@ export const Row = styled.tr`
     border-collapse: collapse;
 
     button {
-      background-color: ${(props) => props.theme.colors.bg_warning};
+      background-color: #fff;
       border: none;
       width: 50%;
       height: 100%;

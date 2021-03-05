@@ -14,10 +14,10 @@ const Row: React.FC = () => {
       <td>TI</td>
       <td>
         <button type="button">
-          <FiEdit color={colors.bg_light} size={18} />
+          <FiEdit color={colors.bg_warning} size={18} />
         </button>
-        <button style={{ backgroundColor: colors.bg_danger }} type="button">
-          <FiTrash color={colors.bg_light} size={18} />
+        <button type="button">
+          <FiTrash color={colors.bg_danger} size={18} />
         </button>
       </td>
     </S.Row>
