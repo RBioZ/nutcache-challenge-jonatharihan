@@ -1,21 +1,26 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import * as S from './styles';
 
 const Grid: React.FC = () => {
   return (
-    <table>
+    <S.Table>
       <tr>
         <th>Nome</th>
         <th>Email</th>
         <th>Data</th>
         <th>Setor</th>
+        <th>Ações</th>
       </tr>
       <tr>
         <td>Jonatha Rihan da Silva</td>
         <td>jonatha_rihan@hotmail.com</td>
         <td>04/08/2000</td>
         <td>TI</td>
+        <td>
+          <button type="button">+</button>
+          <button type="button">-</button>
+        </td>
       </tr>
       <tr>
         <td>Michel Leonidas Aleixo</td>
@@ -35,7 +40,7 @@ const Grid: React.FC = () => {
         <td>04/08/2000</td>
         <td>Comercial</td>
       </tr>
-    </table>
+    </S.Table>
   );
 };
 
