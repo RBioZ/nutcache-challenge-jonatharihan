@@ -2,9 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --color-background: #fff;
-    --color-primary: #7ce0d3;
-    --color-secondary: #f4364c;
 
     font-size: 60%;
   }
