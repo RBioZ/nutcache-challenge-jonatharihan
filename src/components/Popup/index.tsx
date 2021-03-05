@@ -2,6 +2,6 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-const src: React.FC = () => <div />;
+const Popup: React.FC = () => <div />;
 
-export default src;
+export default Popup;
