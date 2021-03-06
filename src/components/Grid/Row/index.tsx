@@ -17,7 +17,7 @@ interface IRow {
   };
 }
 
-const Row: React.FC<IRow> = ({ data }) => {
+const Row: React.FC = () => {
   const { colors } = useContext(ThemeContext);
 
   return (
