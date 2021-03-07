@@ -2,7 +2,9 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { ThemeContext } from 'styled-components';
-import api from '../../services/api';
+import { useDispatch } from 'react-redux';
+import { closeModalCreate } from '../../store/ducks/Modal';
+
 import * as S from './styles';
 
 interface IData {
@@ -16,12 +18,15 @@ interface IData {
 }
 
 const Popup: React.FC = () => {
+  const dispatch = useDispatch();
+
   const { register, handleSubmit } = useForm();
   const { colors } = useContext(ThemeContext);
 
   const submitRegister = async (data: IData) => {
     try {
-      await api.post('/employee', data);
+      console.log(data);
+      // await api.post('/employee', data);
       // eslint-disable-next-line no-alert
       alert('Funcionário Cadastrado!');
       // eslint-disable-next-line no-empty
@@ -85,7 +90,11 @@ const Popup: React.FC = () => {
           </div>
 
           <div className="wrapper">
-            <button style={{ backgroundColor: colors.bg_danger }} type="button">
+            <button
+              onClick={() => dispatch(closeModalCreate())}
+              style={{ backgroundColor: colors.bg_danger }}
+              type="button"
+            >
               Cancelar
             </button>
             <button type="submit">Cadastrar</button>
