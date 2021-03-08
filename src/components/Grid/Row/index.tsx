@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { FiEdit, FiTrash } from 'react-icons/fi';
 import { ThemeContext } from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { openModalDelete } from '../../../store/ducks/Modal';
+import { openModalDelete, openModalEdit } from '../../../store/ducks/Modal';
 import * as S from './styles';
 
 interface IRow {
@@ -32,7 +32,10 @@ const Row: React.FC<IRow> = ({ data }) => {
       <td>{data.employee.birth_date}</td>
       <td>{data.employee.team}</td>
       <td>
-        <button type="button">
+        <button
+          onClick={() => dispatch(openModalEdit(data.employee))}
+          type="button"
+        >
           <FiEdit color={colors.bg_warning} size={18} />
         </button>
         <button

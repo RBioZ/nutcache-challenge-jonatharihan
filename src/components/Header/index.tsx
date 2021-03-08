@@ -10,7 +10,6 @@ import NutLogo from '../../assets/images/nutcache-logo.png';
 
 const Header: React.FC = () => {
   const dispatch = useDispatch();
-  const modal = useSelector((state: ApplicationState) => state.modal);
 
   return (
     <S.Container>

@@ -5,6 +5,7 @@ import {
   loadEmployeeAsync,
   addEmployeeAsync,
   delEmployeeAsync,
+  editEmployeeAsync,
 } from './ducks/Crud';
 
 export default function* rootSaga(): Generator {
@@ -12,5 +13,6 @@ export default function* rootSaga(): Generator {
     takeLatest(CrudTypes.LOAD_EMPLOYEE_REQUEST, loadEmployeeAsync),
     takeLatest(CrudTypes.ADD_EMPLOYEE_REQUEST, addEmployeeAsync),
     takeLatest(CrudTypes.DEL_EMPLOYEE_REQUEST, delEmployeeAsync),
+    takeLatest(CrudTypes.EDIT_EMPLOYEE_REQUEST, editEmployeeAsync),
   ]);
 }

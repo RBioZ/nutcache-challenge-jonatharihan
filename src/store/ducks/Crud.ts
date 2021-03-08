@@ -93,7 +93,6 @@ const reducer: Reducer<CrudState> = (state = INITIAL_STATE, action) => {
       toast('Sucesso!', {
         type: 'success',
       });
-      console.log(action.payload);
       return {
         ...state,
         employees: state.employees.filter(
@@ -109,7 +108,19 @@ const reducer: Reducer<CrudState> = (state = INITIAL_STATE, action) => {
     case CrudTypes.EDIT_EMPLOYEE_REQUEST:
       return state;
     case CrudTypes.EDIT_EMPLOYEE_SUCCESS:
-      return state;
+      toast('Sucesso!', {
+        type: 'success',
+      });
+      console.log(action.payload.employee);
+      return {
+        ...state,
+        employees: state.employees.map((employee) => {
+          if (employee._id === action.payload.id) {
+            return { ...action.payload.employee };
+          }
+          return employee;
+        }),
+      };
     case CrudTypes.EDIT_EMPLOYEE_FAILED:
       toast('Ocorreu um erro ao tentar editar o funcionário', {
         type: 'error',
@@ -141,7 +152,7 @@ export const delEmployee = (
 
 export const editEmployee = (
   id: string,
-  employee: IEmployee,
+  employee: IRequest,
 ): { type: CrudTypes.EDIT_EMPLOYEE_REQUEST } =>
   action(CrudTypes.EDIT_EMPLOYEE_REQUEST, { id, employee });
 
@@ -184,5 +195,17 @@ export function* delEmployeeAsync(data: any): Generator {
     });
   } catch (err) {
     yield put({ type: CrudTypes.DEL_EMPLOYEE_FAILED });
+  }
+}
+
+export function* editEmployeeAsync(data: any): Generator {
+  try {
+    yield call(api.put, `employee/${data.payload.id}`, data.payload.employee);
+    yield put({
+      type: CrudTypes.EDIT_EMPLOYEE_SUCCESS,
+      payload: { id: data.payload.id, employee: data.payload.employee },
+    });
+  } catch (err) {
+    yield put({ type: CrudTypes.EDIT_EMPLOYEE_FAILED });
   }
 }

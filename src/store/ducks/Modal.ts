@@ -10,6 +10,9 @@ export enum ModalTypes {
 
   OPEN_MODAL_DELETE = '@modal/OPEN_MODAL_DELETE',
   CLOSE_MODAL_DELETE = '@modal/CLOSE_MODAL_DELETE',
+
+  OPEN_MODAL_EDIT = '@modal/OPEN_MODAL_EDIT',
+  CLOSE_MODAL_EDIT = '@modal/CLOSE_MODAL_EDIT',
 }
 
 export interface IEmployee {
@@ -26,6 +29,7 @@ export interface IEmployee {
 export interface ModalState {
   readonly createModal: boolean;
   readonly deleteModal: boolean;
+  readonly editModal: boolean;
   readonly employee: IEmployee | null;
 }
 
@@ -34,6 +38,7 @@ export interface ModalState {
 const INITIAL_STATE: ModalState = {
   createModal: false,
   deleteModal: false,
+  editModal: false,
   employee: null,
 };
 
@@ -47,6 +52,10 @@ const reducer: Reducer<ModalState> = (state = INITIAL_STATE, action) => {
       return { ...state, deleteModal: true, employee: action.payload.employee };
     case ModalTypes.CLOSE_MODAL_DELETE:
       return { ...state, deleteModal: false };
+    case ModalTypes.OPEN_MODAL_EDIT:
+      return { ...state, editModal: true, employee: action.payload.employee };
+    case ModalTypes.CLOSE_MODAL_EDIT:
+      return { ...state, editModal: false };
     default:
       return state;
   }
@@ -69,3 +78,11 @@ export const openModalDelete = (
 
 export const closeModalDelete = (): { type: ModalTypes.CLOSE_MODAL_DELETE } =>
   action(ModalTypes.CLOSE_MODAL_DELETE);
+
+export const openModalEdit = (
+  employee: IEmployee,
+): { type: ModalTypes.OPEN_MODAL_EDIT } =>
+  action(ModalTypes.OPEN_MODAL_EDIT, { employee });
+
+export const closeModalEdit = (): { type: ModalTypes.CLOSE_MODAL_EDIT } =>
+  action(ModalTypes.CLOSE_MODAL_EDIT);
