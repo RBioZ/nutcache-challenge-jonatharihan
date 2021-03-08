@@ -21,7 +21,7 @@ const Grid: React.FC = () => {
       </thead>
       <tbody>
         {crud.employees.map((employee) => {
-          return <Row key={employee._id} />;
+          return <Row data={{ employee }} key={employee._id} />;
         })}
       </tbody>
     </S.Table>

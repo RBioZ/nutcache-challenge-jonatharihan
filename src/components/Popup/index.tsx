@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { ThemeContext } from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { closeModalCreate } from '../../store/ducks/Modal';
+import { addEmployee, IRequest } from '../../store/ducks/Crud';
 
 import * as S from './styles';
 
@@ -24,16 +25,8 @@ const Popup: React.FC = () => {
   const { colors } = useContext(ThemeContext);
 
   const submitRegister = async (data: IData) => {
-    try {
-      console.log(data);
-      // await api.post('/employee', data);
-      // eslint-disable-next-line no-alert
-      alert('Funcionário Cadastrado!');
-      // eslint-disable-next-line no-empty
-    } catch {
-      // eslint-disable-next-line no-alert
-      alert('Ocorreu um error!');
-    }
+    dispatch(addEmployee(data as IRequest));
+    dispatch(closeModalCreate());
   };
 
   return (

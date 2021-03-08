@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as S from './styles';
 import { ApplicationState } from '../../store';
-import { loadEmployeesRequest } from '../../store/ducks/Crud';
+import { loadEmployees } from '../../store/ducks/Crud';
 
 // Components
 import Grid from '../../components/Grid';
@@ -14,7 +14,7 @@ const Main: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadEmployeesRequest());
+    dispatch(loadEmployees());
   }, [dispatch]);
 
   return (
