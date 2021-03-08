@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+<h1 align="center">
+    <img alt="Logo" title="#delicinha" src=".github/nutcache-logo.png" width="200px" />
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center">
+  Desafio CRUD da Nutcache!
+</h4>
 
-## Available Scripts
+<p align="center">
+ <img src="https://img.shields.io/static/v1?label=Version&message=1.0.0&color=7ce0d3&labelColor=000000" alt="PRs welcome!" />
 
-In the project directory, you can run:
+  <img alt="License" src="https://img.shields.io/static/v1?label=License&message=MIT&color=7ce0d3&labelColor=000000">
+</p>
 
-### `yarn start`
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-atenção">Atenção</a>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## 🚀 Tecnologias
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-### `yarn build`
+- [React](https://facebook.github.io/react-native/)
+- [Redux](https://expo.io/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🗒 Projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O projeto é uma aplicação CRUD para funcionários, com os requisitos solicitados.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### ✏️  TO DO
 
-### `yarn eject`
+- [ ] Testes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 💻 Instalação
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Clone this repository
+$ git clone https://github.com/RBioZ/nutcache-challenge-jonatharihan
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Go into the repository
+$ cd nutcache-challenge-jonatharihan
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Install dependencies
+$ yarn install
 
-## Learn More
+# Start
+$ yarn start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚨 Atenção
+
+Caso a aplicação não esteja funcionando corretamente, deve-se conseguir um novo endpoint no site https://crudcrud.com/ e altere o base_URL em src/services/api.ts . Caso o problema persista, crie uma Issue descrevendo seu problema.
