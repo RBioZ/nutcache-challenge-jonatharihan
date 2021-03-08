@@ -1,30 +1,27 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import * as S from './styles';
-
-import api from '../../services/api';
+import { ApplicationState } from '../../store';
+import { loadEmployees } from '../../store/ducks/Crud';
 
 // Components
 import Grid from '../../components/Grid';
 import Header from '../../components/Header';
 import Popup from '../../components/Popup';
+import PopupDelete from '../../components/PopupDelete';
 
 const Main: React.FC = () => {
-  const handleGetEmployee = useCallback(async () => {
-    try {
-      // const response = await api.get('/employee');
-      // console.log(response.data);
-    } catch {
-      alert('Ocorreu um erro!');
-    }
-  }, []);
+  const modal = useSelector((state: ApplicationState) => state.modal);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    handleGetEmployee();
-  }, [handleGetEmployee]);
+    dispatch(loadEmployees());
+  }, [dispatch]);
 
   return (
     <S.Container>
-      {true && <Popup />}
+      {modal.createModal && <Popup />}
+      {true && <PopupDelete />}
       <Header />
 
       <S.Title>Crud</S.Title>
