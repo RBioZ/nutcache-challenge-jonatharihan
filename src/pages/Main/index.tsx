@@ -8,6 +8,7 @@ import { loadEmployees } from '../../store/ducks/Crud';
 import Grid from '../../components/Grid';
 import Header from '../../components/Header';
 import Popup from '../../components/Popup';
+import PopupDelete from '../../components/PopupDelete';
 
 const Main: React.FC = () => {
   const modal = useSelector((state: ApplicationState) => state.modal);
@@ -20,6 +21,7 @@ const Main: React.FC = () => {
   return (
     <S.Container>
       {modal.createModal && <Popup />}
+      {true && <PopupDelete />}
       <Header />
 
       <S.Title>Crud</S.Title>
