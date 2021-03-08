@@ -39,6 +39,7 @@ const Popup: React.FC = () => {
     setValue('cpf', modal.employee?.cpf);
     setValue('gender', modal.employee?.gender);
     setValue('team', modal.employee?.team);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

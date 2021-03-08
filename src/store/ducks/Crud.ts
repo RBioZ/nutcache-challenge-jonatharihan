@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable camelcase */
@@ -111,7 +112,6 @@ const reducer: Reducer<CrudState> = (state = INITIAL_STATE, action) => {
       toast('Sucesso!', {
         type: 'success',
       });
-      console.log(action.payload.employee);
       return {
         ...state,
         employees: state.employees.map((employee) => {

@@ -33,3 +33,29 @@ export const Button = styled.button`
     outline: 0;
   }
 `;
+
+export const PreviusButton = styled.button`
+  background-color: #fff;
+  border: 1px solid;
+
+  box-shadow: none;
+
+  margin-right: 1rem;
+
+  height: 4rem;
+  width: 4rem;
+
+  border-radius: 0.3rem;
+
+  color: ${(props) => props.theme.colors.bg_light};
+
+  :hover {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 500ms;
+  }
+
+  :focus {
+    outline: 0;
+  }
+`;
