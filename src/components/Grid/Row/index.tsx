@@ -2,6 +2,8 @@
 import React, { useContext } from 'react';
 import { FiEdit, FiTrash } from 'react-icons/fi';
 import { ThemeContext } from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { openModalDelete } from '../../../store/ducks/Modal';
 import * as S from './styles';
 
 interface IRow {
@@ -21,6 +23,7 @@ interface IRow {
 
 const Row: React.FC<IRow> = ({ data }) => {
   const { colors } = useContext(ThemeContext);
+  const dispatch = useDispatch();
 
   return (
     <S.Row>
@@ -32,7 +35,10 @@ const Row: React.FC<IRow> = ({ data }) => {
         <button type="button">
           <FiEdit color={colors.bg_warning} size={18} />
         </button>
-        <button type="button">
+        <button
+          onClick={() => dispatch(openModalDelete(data.employee))}
+          type="button"
+        >
           <FiTrash color={colors.bg_danger} size={18} />
         </button>
       </td>

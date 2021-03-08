@@ -25,6 +25,10 @@
     "prettier"
   ],
   "rules": {
+    "import/no-unresolved": [
+      2, 
+      { "caseSensitive": false }
+    ],
     "no-alert":"off",
     "camelcase": [2, {"properties": "never"}],
     "jsx-a11y/label-has-for":"off",

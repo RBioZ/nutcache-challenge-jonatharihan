@@ -21,7 +21,7 @@ const Main: React.FC = () => {
   return (
     <S.Container>
       {modal.createModal && <Popup />}
-      {true && <PopupDelete />}
+      {modal.deleteModal && <PopupDelete />}
       <Header />
 
       <S.Title>Crud</S.Title>

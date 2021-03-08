@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable camelcase */
 /* eslint-disable no-shadow */
@@ -89,7 +90,16 @@ const reducer: Reducer<CrudState> = (state = INITIAL_STATE, action) => {
     case CrudTypes.DEL_EMPLOYEE_REQUEST:
       return state;
     case CrudTypes.DEL_EMPLOYEE_SUCCESS:
-      return state;
+      toast('Sucesso!', {
+        type: 'success',
+      });
+      console.log(action.payload);
+      return {
+        ...state,
+        employees: state.employees.filter(
+          (employee) => employee._id !== action.payload.id,
+        ),
+      };
     case CrudTypes.DEL_EMPLOYEE_FAILED:
       toast('Ocorreu um erro ao tentar deletar o funcionário', {
         type: 'error',
@@ -162,5 +172,17 @@ export function* addEmployeeAsync(data: any): Generator {
     });
   } catch (err) {
     yield put({ type: CrudTypes.ADD_EMPLOYEE_FAILED });
+  }
+}
+
+export function* delEmployeeAsync(data: any): Generator {
+  try {
+    yield call(api.delete, `employee/${data.payload.id}`);
+    yield put({
+      type: CrudTypes.DEL_EMPLOYEE_SUCCESS,
+      payload: { id: data.payload.id },
+    });
+  } catch (err) {
+    yield put({ type: CrudTypes.DEL_EMPLOYEE_FAILED });
   }
 }

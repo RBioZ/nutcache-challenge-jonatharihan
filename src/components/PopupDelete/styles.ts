@@ -8,19 +8,25 @@ export const Background = styled.div`
 `;
 
 export const Container = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 50%;
-
-  margin: auto;
-  margin-top: 5%;
-
   background-color: #fff;
   border-radius: 5px;
+  padding: 1rem;
+
+  div {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
 
   button {
     background-color: ${(props) => props.theme.colors.bg_success};
     color: ${(props) => props.theme.colors.bg_light};
     height: 4rem;
-    margin-top: 4rem;
     border: none;
     border-radius: 0.3rem;
     width: 48%;

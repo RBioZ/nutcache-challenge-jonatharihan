@@ -7,6 +7,10 @@ export const Table = styled.table`
   border-collapse: collapse;
   margin-top: 2rem;
 
+  thead {
+    border-radius: 5px;
+  }
+
   th {
     font-size: 1.6rem;
     text-align: left;
@@ -20,5 +24,10 @@ export const Table = styled.table`
   th {
     border: 1px solid ${(props) => props.theme.colors.primary};
     border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding-left: 1rem;
   }
 `;

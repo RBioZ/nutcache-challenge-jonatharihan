@@ -1,23 +1,42 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeModalDelete } from '../../store/ducks/Modal';
+import { delEmployee } from '../../store/ducks/Crud';
+import { ApplicationState } from '../../store';
 
 import * as S from './styles';
 
 const PopupDelete: React.FC = () => {
   const dispatch = useDispatch();
+  const modal = useSelector((state: ApplicationState) => state.modal);
   const { colors } = useContext(ThemeContext);
 
   return (
     <S.Background>
       <S.Container>
-        <h1>Deletar?</h1>
+        <h2>Deletar?</h2>
+
+        <p>
+          Tem certeza que deseja excluir <strong>{modal.employee?.name}</strong>{' '}
+          da sua base de dados?
+        </p>
 
         <div className="wrapper">
-          <button style={{ backgroundColor: colors.bg_danger }} type="button">
+          <button
+            onClick={() => dispatch(closeModalDelete())}
+            style={{ backgroundColor: colors.bg_danger }}
+            type="button"
+          >
             Cancelar
           </button>
-          <button type="submit">Cadastrar</button>
+          <button
+            onClick={() => dispatch(delEmployee(String(modal.employee?._id)))}
+            type="submit"
+          >
+            Deletar
+          </button>
         </div>
       </S.Container>
     </S.Background>
